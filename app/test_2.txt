@@ -1,0 +1,28 @@
+TEST 2 - PWM con período variable y duty cycle fijo
+
+Configuración (según el código)
+- TIM3, canal 1, salida en PA6. Reloj del timer: 64 MHz.
+- El ancho de pulso se fija siempre en la mitad del período, por lo que el duty
+  cycle es constante e igual a 50 %.
+- El período oscila entre ARR ~ 16383 y ARR ~ 32767, es decir entre ~0,26 ms y
+  ~0,51 ms (frecuencia de ~2 kHz a ~4 kHz).
+
+Osciloscopio (PA6 - GND)
+- Período: se redujo respecto del Test 1 (de ~1 ms a 0,26 - 0,51 ms) y ahora varía
+  en el tiempo.
+- Duty cycle: se mantiene en 50 %. Aunque el período cambie, la relación entre el
+  tiempo en alto y el período no se modifica.
+
+LED (PA6 - R - LED - GND)
+- El brillo se mantiene prácticamente constante y no llega a apagarse en ningún
+  momento.
+- El brillo corresponde a un duty de 50 %, es decir, aproximadamente la mitad del
+  máximo alcanzado en el Test 1 (donde el duty llegaba a 100 %).
+
+Comparación con el Test 1
+- Test 1: el período es fijo y el duty cycle varía, por lo que el brillo varía
+  (el LED se enciende y se apaga).
+- Test 2: el período varía y el duty cycle es fijo, por lo que el brillo no varía.
+- Conclusión: el brillo percibido depende del duty cycle (la fracción de tiempo
+  en alto) y no del período, siempre que la frecuencia sea lo bastante alta como
+  para que el ojo promedie los pulsos.

@@ -1,0 +1,20 @@
+TEST 1 - PWM con período fijo y duty cycle variable
+
+Configuración (según el código)
+- TIM3, canal 1, salida en PA6. Reloj del timer: 64 MHz.
+- Período fijo: ARR = 65535, es decir 65536 cuentas / 64 MHz = 1,024 ms.
+- El ancho de pulso crece de 0 a 65535 y luego decrece, en pasos de 100 cuentas
+  cada 4 ms (un ciclo completo dura alrededor de 5 s).
+
+Osciloscopio (PA6 - GND)
+- Período: aproximadamente 1 ms (frecuencia de ~1 kHz). No se modifica a lo largo
+  del test.
+- Duty cycle: es la fracción del período en la que la señal está en estado alto,
+  duty = tiempo en alto / período (= CCR1 / (ARR + 1)). Sí se modifica: aumenta
+  progresivamente de 0 % a 100 % y vuelve a disminuir, de forma periódica.
+
+LED (PA6 - R - LED - GND)
+- El brillo aumenta y disminuye de manera continua: el LED se apaga cuando el
+  duty cycle es cercano a 0 % y alcanza su brillo máximo cuando es cercano a 100 %.
+- Como el período es constante, el cambio de brillo se debe únicamente a la
+  variación del tiempo que la señal permanece en estado alto.
