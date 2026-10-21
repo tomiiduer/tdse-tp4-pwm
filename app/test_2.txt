@@ -1,4 +1,0 @@
-TEST 2
-
-Se redujo el periodo y aumento el duty cycle, por ende la variación de brillo en el led es menor, no llega a apagarse en ningún momento.
-el pico máximo de luminosidad se mantiene igual al del test_1 pero el tiempo en ese estado es mas grande.
