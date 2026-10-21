@@ -1,6 +1,0 @@
-TEST 1
-
-El periodo de la señal es 1 mS y no se modifica
-
-
-El Duty cycle es la fracción del periodo donde se encuentra en estado "prendido" y va variando con el pasar del tiempo de modo tal que el led se enciende y se apaga.
